@@ -40,6 +40,7 @@ const login = asyncWrapper(async (req, res, next) => {
     const tokenSession = await tokenSign(userSession)
 
     const data = {
+      session: userSession,
       jwt: tokenSession
     }
 
@@ -79,6 +80,7 @@ const signup = asyncWrapper(async (req, res, next) => {
   const tokenSession = await tokenSign(userSession)
 
   const data = {
+    session: userSession,
     jwt: tokenSession
   }
   res.status(201).json(data)
