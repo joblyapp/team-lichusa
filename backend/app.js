@@ -50,7 +50,7 @@ app.get('/admin', mustAuthenticate, onlyAdmin, (req, res) => {
 app.use((_, res) => res.status(404).send("Route does not exist"))
 app.use(errorHandlerMiddleware)
 
-const PORT = env.PORT || 8000
+const PORT = env.PORT || 8080
 
 const start = async () => {
   try {
