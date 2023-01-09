@@ -5,10 +5,11 @@ const {
   signup,
   logout
 } = require("../controllers/auth")
+const { mustAuthenticate } = require("../middleware/auth")
 
 const router = express.Router()
 
-router.get("/me", indexAuth)
+router.get("/me", mustAuthenticate, indexAuth)
 router.post("/login", login)
 router.post("/signup", signup)
 router.post("/logout", logout)
